@@ -1,4 +1,4 @@
-name: CI - TechMobile
+name: CI - TechMobile Inventario
 
 on:
   push:
@@ -7,17 +7,27 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+
       - name: Configurar Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
+
       - name: Instalar dependencias
         run: |
           cd backend
           pip install -r requirements.txt
-      - name: Pipeline ejecutado
-        run: echo "✅ CI configurado correctamente"
+
+      - name: Ejecutar pruebas automatizadas
+        run: |
+          cd backend
+          pytest tests/test_integration.py -v
+
+      - name: Mostrar resultado
+        run: echo "✅ Pruebas ejecutadas correctamente"

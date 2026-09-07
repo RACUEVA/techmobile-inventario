@@ -2,13 +2,15 @@
 
 ## 📌 Descripción
 Sistema de gestión de inventario para la tienda de celulares TechMobile.
+Permite registrar, editar, eliminar y consultar productos con alertas de stock bajo.
 
 ## 🛠️ Stack Tecnológico
 - **Backend:** Python + FastAPI
 - **Frontend:** React
+- **Base de datos:** PostgreSQL
 - **CI/CD:** GitHub Actions
 
-## 👥 Integrantes
+## 👥 Integrantes del Grupo 04
 - Ronal Andrés Cueva Toaquiza
 - Estefania Dayanara Anchundia Toaza
 - Esthela Yuleny Cuaran Marín
