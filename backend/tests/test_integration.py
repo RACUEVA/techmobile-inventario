@@ -1,3 +1,8 @@
+import sys
+import os
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 import pytest
 from fastapi.testclient import TestClient
 from app.main import app
@@ -5,7 +10,6 @@ from app.main import app
 client = TestClient(app)
 
 def test_registrar_y_consultar_producto():
-    # Registrar producto
     response = client.post("/productos/", json={
         "nombre": "Galaxy S24",
         "marca": "Samsung",
@@ -19,7 +23,6 @@ def test_registrar_y_consultar_producto():
     data = response.json()
     producto_id = data["id"]
 
-    # Consultar producto
     response = client.get(f"/productos/{producto_id}")
     assert response.status_code == 200
     assert response.json()["nombre"] == "Galaxy S24"
