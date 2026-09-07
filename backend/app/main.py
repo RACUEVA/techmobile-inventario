@@ -1,5 +1,11 @@
 from fastapi import FastAPI
-from routers import productos
+import sys
+import os
+
+# Asegurar que el directorio actual esté en el path
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from app.routers import productos
 
 app = FastAPI(title="TechMobile Inventario API", version="1.0.0")
 
@@ -12,5 +18,3 @@ def root():
 @app.get("/health")
 def health():
     return {"status": "ok"}
-
-# Configuración inicial del módulo de inventario
