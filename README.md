@@ -17,3 +17,6 @@ Sistema de gestión de inventario para la tienda de celulares TechMobile.
 - `main`: Rama estable
 - `feature/*`: Ramas para funcionalidades
 - Los cambios se integran mediante Pull Requests
+
+## 📝 Estado actual
+- Estructura de backend configurada correctamente.

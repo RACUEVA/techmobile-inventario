@@ -9,3 +9,5 @@ def root():
 @app.get("/health")
 def health():
     return {"status": "ok"}
+
+# Configuración inicial del módulo de inventario
